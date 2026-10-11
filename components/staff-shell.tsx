@@ -6,12 +6,8 @@ import { Button, buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
 const LINKS = [
-  { href: "/dashboard", label: "Dashboard", permission: "reports.view" as const },
-  { href: "/menu", label: "Menu", permission: "menu.manage" as const },
   { href: "/tables", label: "Tables", permission: "tables.manage" as const },
-  { href: "/orders", label: "Orders", permission: "orders.manage" as const },
-  { href: "/kitchen", label: "Kitchen", permission: "orders.viewKitchen" as const },
-  { href: "/reports", label: "Reports", permission: "reports.view" as const },
+  { href: "/orders/new", label: "New order", permission: "orders.manage" as const },
 ];
 
 export function StaffShell({

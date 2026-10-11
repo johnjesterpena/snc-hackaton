@@ -25,8 +25,11 @@ export async function createOrderAction(input: unknown) {
     p_items: parsed.data.items,
   });
   if (error) return { error: error.message };
+  if (typeof data !== "string" || data.length === 0) {
+    return { error: "The database did not return the new order reference" };
+  }
   revalidateOps();
-  return { ok: true as const, orderId: data as string };
+  return { ok: true as const, orderId: data };
 }
 
 export async function replaceOrderItemsAction(input: unknown) {
